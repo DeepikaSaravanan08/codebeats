@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CodeBeats Studio — Musical Typing</title>
+
+  <!-- Tone.js -->
+  <script src="https://cdn.jsdelivr.net/npm/tone@14.8.39/build/Tone.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="bgFilter"></div>
+
+  <main class="app">
+    <header>
+      <h1>CodeBeats Studio</h1>
+      <p class="tag">Type music — Learn songs — Feel the rhythm ✨</p>
+    </header>
+
+    <section class="controls">
+      <div class="row">
+        <h2><label>Instrument</label></h2>
+        <select id="instr">
+          <option value="piano">Piano (Sampler)</option>
+          <option value="synth">Synth (FMSynth)</option>
+          <option value="pluck">Pluck (Guitar-like)</option>
+          <option value="drum">Drum</option>
+          <option value="combo">Combo (Piano + Drum)</option>
+        </select>
+      </div>
+
+      <div class="row">
+          <h2><label>Typing Mode</label></h2>
+        <select id="typingMode">
+          <option value="melody">Melody (notes)</option>
+          <option value="drum">Drum (percussive)</option>
+          <option value="both">Both</option>
+        </select>
+      </div>
+
+      <div class="row">
+          <h2><label>Tempo (BPM)</label></h2>
+        <input id="bpm" type="number" min="40" max="220" value="90" />
+      </div>
+
+      <div class="row">
+          <h2><label>Song</label></h2>
+        <select id="songSelect"></select>
+      </div>
+
+      <div class="row">
+        <button id="teachBtn">🎓 Teach</button>
+        <button id="demoBtn">▶ Demo</button>
+        <button id="stopBtn">⏹ Stop</button>
+      </div>
+    </section>
+
+    <section class="main">
+      <div class="left">
+        <h2>Typing Zone (plays as you type)</h2>
+        <textarea id="typeBox" placeholder="Type here — every keypress creates sound..."></textarea>
+        <p class="hint">Try typing fast or slow. Use instrument and typing-mode switches above.</p>
+      </div>
+
+      <div class="right">
+        <h2>Learn Mode & Keyboard</h2>
+        <div id="keyboard" class="keyboard"></div>
+        <div id="status" class="status">Click anywhere to enable audio. Then type to play.</div>
+        <div id="motivate" class="motivate">Music is practice + patience — keep playing 🎵</div>
+        <div id="lyrics" class="lyrics" style="margin-top:10px; opacity:0.95;"></div>
+      </div>
+    </section>
+
+    <footer>
+      <small>Built with Tone.js • Add your own songs using the Add Song feature in the code.</small>
+    </footer>
+  </main>
+
+  <canvas id="vis"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>

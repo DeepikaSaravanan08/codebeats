@@ -1,0 +1,189 @@
+:root {
+  --dark1: #071426;
+  --dark2: #12233f;
+  --neon: #7ee8fa;
+  --accent: #ff9f1c;
+  --aurora1: #3cffd0;
+  --aurora2: #0099ff;
+  --aurora3: #ff9f1c;
+}
+
+/* Animated Aurora Background */
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Poppins', system-ui;
+  color: #fff;
+  background: radial-gradient(circle at 10% 20%, var(--aurora1) 0%, transparent 25%),
+              radial-gradient(circle at 90% 80%, var(--aurora2) 0%, transparent 30%),
+              radial-gradient(circle at 40% 90%, var(--aurora3) 0%, transparent 25%),
+              linear-gradient(120deg, var(--dark1), var(--dark2));
+  background-size: 200% 200%;
+  animation: auroraFlow 10s infinite alternate ease-in-out;
+  overflow: hidden;
+}
+@keyframes auroraFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Main container */
+.app {
+  width: 90vw;
+  height: 88vh;
+  margin: 4vh auto;
+  padding: 30px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Header */
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  background: linear-gradient(90deg, var(--aurora2), var(--aurora3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.tag {
+  font-size: 1.8rem;
+  opacity: 0.9;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+select,
+input {
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.1);
+  color: #fff !important;
+  font-size: 1.5rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+select option {
+  background: #081426;
+  color: #fff;
+}
+select:hover, input:focus {
+  border-color: var(--neon);
+  box-shadow: 0 0 10px var(--neon);
+}
+button {
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  background: linear-gradient(90deg, var(--accent), #ffd57e);
+  color: #081426;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.2s ease;
+}
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px var(--accent);
+}
+
+/* Main layout */
+.main {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex: 1;
+}
+.left, .right {
+  flex: 1;
+  padding: 20px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Typing area */
+textarea#typeBox {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  padding: 20px;
+  font-size: 2rem;
+  resize: none;
+  outline: none;
+  font-weight: 500;
+  box-shadow: inset 0 0 25px rgba(0,0,0,0.4);
+}
+
+/* Keyboard */
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 12px;
+}
+.key {
+  width: 90px;
+  height: 140px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.7rem;
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+.key.play {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px var(--neon);
+}
+
+/* Status + motivation */
+.status {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 8px;
+}
+.motivate {
+  margin-top: 8px;
+  font-size: 2rem;
+  background: linear-gradient(90deg, rgba(255,255,255,0.05), transparent);
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #7ee8fa;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  opacity: 0.8;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 1100px) {
+  .main { flex-direction: column; align-items: center; }
+  .left, .right { width: 95%; }
+  .key { width: 75px; height: 120px; }
+}
