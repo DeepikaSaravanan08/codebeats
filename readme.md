@@ -28,6 +28,7 @@ Built entirely with **HTML, CSS, and JavaScript** in **VS Code**.
 **Clone this repository**
    ```bash
    git clone https://github.com/<your-username>/CodeBeats-Studio.git
+---
 💬 Motivation
 
 “Every line of code has a rhythm. Every rhythm has a purpose.”
