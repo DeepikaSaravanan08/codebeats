@@ -25,14 +25,13 @@ Built entirely with **HTML, CSS, and JavaScript** in **VS Code**.
 - **Audio Files** – from [FreeSound.org](https://freesound.org/) and custom beats  
 
 ---
-**Clone this repository**
-   ```bash
-   git clone https://github.com/<your-username>/CodeBeats-Studio.git
----
+
 💬 Motivation
 
 “Every line of code has a rhythm. Every rhythm has a purpose.”
 CodeBeats Studio fuses sound, creativity, and logic — making coding feel alive.
+
+---
 
 💡 Future Enhancements
 
